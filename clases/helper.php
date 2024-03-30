@@ -26,7 +26,25 @@
 }
 }
     function isSecure($pw){
-        preg_match();
+        if (preg_match("~[a-zA-Z0-9]+~", $pw, $matches)){
+            return true;
+        }else{
+            return false;
+        }
     }
-    function keepValue(){}
-  }
+    function keepValue($val, $type, $attr){
+        switch($type){
+            case 'textbox':
+                echo "value = '$val'";
+                break;
+            case 'textarea':
+                echo "value = '$val'";
+                break;
+            case 'select':
+                if ($attr == 'value'){
+                    echo "value = '$val'";        
+        }else {
+            echo ($val);
+        }
+    }}
+}
